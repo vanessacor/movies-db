@@ -1,4 +1,18 @@
-# moviesdb
+# Movies DB
+
+This is a learning Vue Project.
+
+## Description
+
+Following a masterclass in Vue I decided to learn how to build a Vue App.
+A Movie application, to list, create, update and delete movies (CRUD).
+
+
+## Project Requirements
+
+
+
+## Reflection
 
 ## Project setup
 ```
