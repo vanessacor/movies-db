@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <AppHeader />
+    <movies v-bind:movies="movies" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AppHeader from "./components/AppHeader.vue";
+import Movies from "./pages/Movies.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
-  }
+    AppHeader,
+    Movies,
+  },
 };
 </script>
 
