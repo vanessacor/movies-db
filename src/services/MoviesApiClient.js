@@ -1,22 +1,22 @@
 import http from "./httpClient";
 
 class MoviesApiClient {
-  getAllMovies() {
+  static getAllMovies() {
     return http.get("/movies");
   }
 
-  getMovie(id) {
+  static getMovie(id) {
     return http.get(`movies/${id}`);
   }
 
-  deleteMovie(id) {
-    return get(`/movies/${id}`, {
+  static deleteMovie(id) {
+    return http.get(`/movies/${id}`, {
       method: "delete",
     });
   }
 
-  createMovie(movie) {
-    return get("/movies", {
+  static createMovie(movie) {
+    return http.get("/movies", {
       method: "POST",
       body: JSON.stringify(movie),
       headers: {
@@ -26,8 +26,8 @@ class MoviesApiClient {
     });
   }
 
-  updateMovie(movie) {
-    return get(`/movies/${movie.id}`, {
+  static updateMovie(movie) {
+    return http.get(`/movies/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify(movie),
       headers: {
@@ -38,4 +38,4 @@ class MoviesApiClient {
   }
 }
 
-export default new MoviesApiClient();
+export default MoviesApiClient;
