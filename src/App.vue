@@ -1,22 +1,12 @@
 <template>
   <div id="app">
-    <AppHeader />
-    <movies v-bind:movies="movies" />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/movies">Movies</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import AppHeader from "./components/AppHeader.vue";
-import Movies from "./pages/Movies.vue";
-
-export default {
-  name: "App",
-  components: {
-    AppHeader,
-    Movies,
-  },
-};
-</script>
 
 <style>
 #app {
@@ -25,6 +15,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
