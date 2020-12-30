@@ -10,31 +10,15 @@ class MoviesApiClient {
   }
 
   static deleteMovie(id) {
-    return http.get(`/movies/${id}`, {
-      method: "delete",
-    });
+    return http.delete(`/movies/${id}`);
   }
 
   static createMovie(movie) {
-    return http.get("/movies", {
-      method: "POST",
-      body: JSON.stringify(movie),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
+    return http.post("/movies", movie);
   }
 
   static updateMovie(movie) {
-    return http.get(`/movies/${movie.id}`, {
-      method: "PUT",
-      body: JSON.stringify(movie),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
+    return http.put(`/movies/${movie.id}`, movie);
   }
 }
 

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Movies from "../views/Movies.vue";
 import MovieDetails from "../views/MovieDetails.vue";
+import MovieForm from "../views/MovieForm.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component:Movies,
+  },
+  {
+    path: "/movies/create",
+    name: "movieForm",
+    component: MovieForm,
   },
   {
     path: "/movies/:id",

@@ -1,5 +1,9 @@
 <template>
   <div id="movies">
+     <router-link to="/movies/create" exact>
+     
+     <p>add a Movie</p>
+    </router-link>
     <section class="movie-list">
       <MovieCard
         v-for="movie in movies"
