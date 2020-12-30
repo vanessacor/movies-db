@@ -1,15 +1,11 @@
 <template>
-  <article>
-    <img src="" alt="" />
+  <article class="movie-details">
+    <img :src="movie.poster_image" alt="" class="movie-details-img" />
     <h2>{{ movie.title }}</h2>
-    <h3>Description</h3>
-    <p>{{ movie.description }}</p>
-    <h3>duration</h3>
-    <p>{{ movie.duration }}</p>
-    <h3>Rating</h3>
-    <p>{{ movie.rating }}</p>
-    <h3>Classification</h3>
-    <p>{{ movie.classification }}</p>
+    <p class="movie-description">{{ movie.description }}</p>
+    <p>{{ movie.duration }} minutes</p>
+    <p> <i class="icon ion-md-star"></i> {{ movie.rating }}</p>
+    <p> {{ movie.classification }}</p>
     <h3>Year</h3>
     <p>{{ movie.year }}</p>
   </article>
@@ -18,8 +14,10 @@
 <script>
 import MoviesApiClient from "../services/MoviesApiClient";
 
+
 export default {
   name: "movieDetails",
+
 
   data() {
     return {
@@ -28,6 +26,7 @@ export default {
       id: this.$route.params.id,
     };
   },
+
 
   methods: {
     async getMovie() {
@@ -43,3 +42,23 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+.movie-details {
+  padding: 10px 10px 5px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #1d1c1b;
+  text-align: left;
+  color:f0f0f0;
+}
+
+.movie-description {
+  text-align: justify;
+}
+
+i {
+  color:#efc936
+}
+</style>

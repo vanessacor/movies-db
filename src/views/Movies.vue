@@ -47,16 +47,6 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 }
-article {
-  max-width: 200px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-img {
-  width: 200px;
-  height: 300px;
-}
-p {
-  text-align: justify;
-}
+
+
 </style>

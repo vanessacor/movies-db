@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    
+    <h2>Welcome to Movies DB</h2>
+   
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import AppHeader from "@/components/AppHeader.vue";
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    AppHeader,
-  },
-};
+  }
+}
 </script>
+
+<style >
+  body {
+    background-color: #191919;
+    color: #f0f0f0;
+  }
+</style>
