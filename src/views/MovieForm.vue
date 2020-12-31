@@ -16,6 +16,21 @@
 					Field is required
 				</p>
 			</div>
+			<div class="movie-form-field" :class="{ invalid: invalidDirector }">
+				<inputText
+					v-model="movie.director"
+					type="text"
+					label="Movie Director"
+					placeholder="Insert Director Name"
+				/>
+
+				<p
+					class="movie-form-feedback"
+					v-if="invalidDirector && submitStatus === 'ERROR'"
+				>
+					Field is required
+				</p>
+			</div>
 
 			<div class="movie-form-field" :class="{ invalid: invalidDescription }">
 				<inputText
@@ -34,7 +49,7 @@
 			</div>
 			<div class="movie-form-field">
 				<inputText
-					v-model="movie.poster_image"
+					v-model="movie.poster"
 					type="text"
 					label="Poster Image"
 					placeholder="Insert Poster Image"
@@ -42,7 +57,7 @@
 
 				<p
 					class="movie-form-feedback"
-					v-if="invalidPosterImage && submitStatus === 'ERROR'"
+					v-if="invalidPoster && submitStatus === 'ERROR'"
 				>
 					Field is required
 				</p>
@@ -82,18 +97,18 @@
 				</p>
 			</div>
 			<div class="movie-form-field">
-				<inputNumber
-					v-model="movie.classification"
-					type="number"
-					label="Classification"
-					placeholder="Insert classification"
+				<inputText
+					v-model="movie.genre"
+					type="text"
+					label="Genre"
+					placeholder="Insert Genre"
 					min="0"
 					max="18"
 				/>
 
 				<p
 					class="movie-form-feedback"
-					v-if="invalidClassification && submitStatus === 'ERROR'"
+					v-if="invalidGenre && submitStatus === 'ERROR'"
 				>
 					Field is required
 				</p>
@@ -113,37 +128,39 @@
 					Field is required
 				</p>
 			</div>
-			<div class="movie-form-actions">
+			<PropagateLoader class="loader" color="#c22026" v-if="submitStatus === 'PENDING'" />
+			<div v-else class="movie-form-actions">
 				<button class="submit">Add Movie</button>
 				<button class="clear" v-on:click="clearForm">Clear</button>
 			</div>
 
 			<p v-if="submitStatus === 'OK'">Thanks for your submission!</p>
 			<p v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
-			<p v-if="submitStatus === 'PENDING'">Sending...</p>
 		</form>
 	</div>
 </template>
 
 <script>
 	import MoviesApiClient from "../services/MoviesApiClient";
+	import { PropagateLoader } from "@saeris/vue-spinners";
 
 	import InputText from "../components/InputText";
 	import InputNumber from "../components/InputText";
 
 	export default {
 		name: "movie-form",
-		components: { InputText, InputNumber },
+		components: { InputText, InputNumber, PropagateLoader },
 		data() {
 			return {
 				submitStatus: null,
 				movie: {
 					title: "",
+					director: "",
 					description: "",
-					poster_image: "",
+					poster: "",
 					duration: "",
 					rating: "",
-					classification: "",
+					genre: "",
 					year: "",
 				},
 			};
@@ -154,11 +171,12 @@
 				const movie = this.movie;
 				if (
 					this.invalidTitle ||
+					this.invalidDirector ||
 					this.invalidDescription ||
-					this.invalidPosterImage ||
+					this.invalidPoster ||
 					this.invalidDuration ||
 					this.invalidRating ||
-					this.invalidClassification ||
+					this.invalidGenre ||
 					this.invalidYear
 				) {
 					this.submitStatus = "ERROR";
@@ -181,11 +199,12 @@
 				event.preventDefault();
 				this.movie = {
 					title: "",
+					director: "",
 					description: "",
-					poster_image: "",
+					poster: "",
 					duration: "",
 					rating: "",
-					classification: "",
+					genre: "",
 					year: "",
 				};
 			},
@@ -194,11 +213,14 @@
 			invalidTitle() {
 				return this.movie.title === "";
 			},
+			invalidDirector() {
+				return this.movie.title === "";
+			},
 			invalidDescription() {
 				return this.movie.description === "";
 			},
-			invalidPosterImage() {
-				return this.movie.poster_image === "";
+			invalidPoster() {
+				return this.movie.poster === "";
 			},
 			invalidDuration() {
 				return this.movie.duration === "";
@@ -206,8 +228,8 @@
 			invalidRating() {
 				return this.movie.rating === "";
 			},
-			invalidClassification() {
-				return this.movie.classification === "";
+			invalidGenre() {
+				return this.movie.genre === "";
 			},
 			invalidYear() {
 				return this.movie.year === "";
@@ -258,7 +280,9 @@
 
 	.clear {
 		background-color: #ee4d4d;
-		box-shadow: 2px 2px 5px #b10d0d;;
+		box-shadow: 2px 2px 5px #b10d0d;
 	}
-
+	.loader {
+		margin: 0 auto;
+	}
 </style>
