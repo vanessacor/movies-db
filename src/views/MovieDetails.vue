@@ -9,6 +9,7 @@
 		<p>{{ movie.genre }}</p>
 		<h3>Year</h3>
 		<p>{{ movie.year }}</p>
+		<button class="clear" v-on:click="deleteMovie">Delete</button>
 	</article>
 </template>
 
@@ -32,6 +33,17 @@
 					(response) => (this.movie = response.data)
 				);
 				this.isloading = false;
+			},
+
+			async deleteMovie(event) {
+				event.preventDefault();
+				this.isloading = true;
+
+				await MoviesApiClient.deleteMovie(this.id).then((response) =>
+					console.log("movie deleted", response)
+				);
+				this.isloading = false;
+				this.$router.push("../Movies")
 			},
 		},
 
