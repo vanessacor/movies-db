@@ -38,7 +38,6 @@
 					type="text"
 					label="Poster Image"
 					placeholder="Insert Poster Image"
-					
 				/>
 
 				<p
@@ -114,8 +113,11 @@
 					Field is required
 				</p>
 			</div>
+			<div class="movie-form-actions">
+				<button class="submit">Add Movie</button>
+				<button class="clear" v-on:click="clearForm">Clear</button>
+			</div>
 
-			<button>Add Movie</button>
 			<p v-if="submitStatus === 'OK'">Thanks for your submission!</p>
 			<p v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
 			<p v-if="submitStatus === 'PENDING'">Sending...</p>
@@ -175,6 +177,18 @@
 					console.log(response)
 				);
 			},
+			clearForm(event) {
+				event.preventDefault();
+				this.movie = {
+					title: "",
+					description: "",
+					poster_image: "",
+					duration: "",
+					rating: "",
+					classification: "",
+					year: "",
+				};
+			},
 		},
 		computed: {
 			invalidTitle() {
@@ -224,4 +238,27 @@
 		border-color: red;
 		padding-left: 20px;
 	}
+
+	.movie-form-actions {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.movie-form-actions button {
+		padding: 10px;
+		font-size: calc(20px + 0.5vw);
+		color: #191919;
+		border: none;
+	}
+
+	.submit {
+		background-color: #84fc66;
+		box-shadow: 2px 2px 5px #3ea823;
+	}
+
+	.clear {
+		background-color: #ee4d4d;
+		box-shadow: 2px 2px 5px #b10d0d;;
+	}
+
 </style>
