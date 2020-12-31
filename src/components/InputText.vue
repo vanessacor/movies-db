@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<label>{{label}}</label>
+	<div class="input-wrapper">
+		<label class="input-label">{{ label }}</label>
 		<input
 			class="input"
 			v-bind="$attrs"
@@ -17,3 +17,25 @@
 		props: ["label", "value"],
 	};
 </script>
+
+<style>
+	.input-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	.input {
+		padding: 10px;
+		width: 100%;
+		font-size: 16px;
+		box-shadow: none;
+		outline: none;
+		border: none;
+		background-color: transparent;
+		border-bottom: 2px solid #dce2e7;
+		color: #dce2e7;
+	}
+	.input-label {
+		margin-bottom: 5px;
+		
+	}
+</style>
