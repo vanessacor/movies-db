@@ -128,12 +128,16 @@
 					Field is required
 				</p>
 			</div>
-			<PropagateLoader class="loader" color="#c22026" v-if="submitStatus === 'PENDING'" />
+			<PropagateLoader
+				class="loader"
+				color="#c22026"
+				v-if="submitStatus === 'PENDING'"
+			/>
 			<div v-else class="movie-form-actions">
-				<button class="submit">Add Movie</button>
-				<button class="clear" v-on:click="clearForm">Clear</button>
+				<base-button class="submit" title="Add Movie" />
+				<base-button class="clear" title="Clear" @click="clearForm" />
 			</div>
-
+	
 			<p v-if="submitStatus === 'OK'">Thanks for your submission!</p>
 			<p v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
 		</form>
@@ -146,10 +150,16 @@
 
 	import InputText from "../components/InputText";
 	import InputNumber from "../components/InputText";
+	import BaseButton from "../components/BaseButton";
 
 	export default {
 		name: "movie-form",
-		components: { InputText, InputNumber, PropagateLoader },
+		components: {
+			InputText,
+			InputNumber,
+			BaseButton,
+			PropagateLoader,
+		},
 		data() {
 			return {
 				submitStatus: null,
@@ -194,6 +204,7 @@
 				await MoviesApiClient.createMovie(movie).then((response) =>
 					console.log(response)
 				);
+				this.$router.push("../Movies");
 			},
 			clearForm(event) {
 				event.preventDefault();
@@ -254,10 +265,10 @@
 	.movie-form-feedback {
 		margin: 0;
 		padding-top: 10px;
-		color: red;
+		color: #c10e0e;
 	}
 	.movie-form.submitted .field.invalid {
-		border-color: red;
+		border-color: #c10e0e;
 		padding-left: 20px;
 	}
 
@@ -266,22 +277,9 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.movie-form-actions button {
-		padding: 10px;
-		font-size: calc(20px + 0.5vw);
-		color: #191919;
-		border: none;
-	}
+	
 
-	.submit {
-		background-color: #84fc66;
-		box-shadow: 2px 2px 5px #3ea823;
-	}
-
-	.clear {
-		background-color: #ee4d4d;
-		box-shadow: 2px 2px 5px #b10d0d;
-	}
+	
 	.loader {
 		margin: 0 auto;
 	}

@@ -1,43 +1,41 @@
 <template>
-  <article :key="movie.title" class="movie-card">
-    <router-link :to="`/movies/${movie.id}`" class="movie-card-link">
-      <img :src="movie.poster" alt="" class="movie-img" />
-      <p>{{ movie.title }}</p>
-    </router-link>
-  </article>
+	<article :key="movie.title" class="movie-card">
+		<router-link :to="`/movies/${movie.id}`" class="movie-card-link">
+			<img :src="movie.poster" alt="" class="movie-img" />
+			<p>{{ movie.title }}</p>
+		</router-link>
+	</article>
 </template>
 
 <script>
-export default {
-  name: "movieCard",
-  props: {
-    movie: Object,
-  },
-};
+	export default {
+		name: "movieCard",
+		props: {
+			movie: Object,
+		},
+	};
 </script>
 
 <style scope>
-.movie-card {
-  max-width: 200px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+	.movie-card {
+		max-width: 200px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+	a {
+		color: #f0f0f0;
+		text-decoration: none;
+	}
 
-}
-a {
-  color: #f0f0f0;
-  text-decoration: none;
-}
+	a:hover {
+		color: #c22026;
+	}
 
-a:hover {
-   filter: grayscale(100%);
-   color: #c22026 ;
-}
-
-.movie-img {
-  width: 200px;
-  height: 300px;
-}
-
-
-
+	a:hover img {
+		filter: grayscale(100%);
+	}
+	.movie-img {
+		width: 200px;
+		height: 300px;
+	}
 </style>
