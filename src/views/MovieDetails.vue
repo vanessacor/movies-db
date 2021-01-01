@@ -13,15 +13,17 @@
 			</div>
 		</div>
 		<div class="movie-details-actions">
-			<base-button title="Delete" class="delete" @click="deleteMovie"  />
-			<base-button class="edit" title="Edit" />
+			<base-button title="Delete" type="delete" @click="deleteMovie" />
+			<router-link :to="{ name: 'movieEdit', params: { data: movie }}" exact >
+				<base-button type="edit" title="Edit" />
+			</router-link>
 		</div>
 	</article>
 </template>
 
 <script>
 	import MoviesApiClient from "../services/MoviesApiClient";
-	import BaseButton from '../components/BaseButton.vue';
+	import BaseButton from "../components/BaseButton.vue";
 
 	export default {
 		name: "movieDetails",

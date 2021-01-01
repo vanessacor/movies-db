@@ -1,5 +1,5 @@
 <template>
-	<div id="movie-form">
+	<div id="movie-create">
 		<form @submit.prevent="handleSubmit" novalidate class="movie-form">
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
@@ -134,10 +134,12 @@
 				v-if="submitStatus === 'PENDING'"
 			/>
 			<div v-else class="movie-form-actions">
-				<base-button class="submit" title="Add Movie" />
-				<base-button class="clear" title="Clear" @click="clearForm" />
+				<base-button type="submit" title="Update Movie" />
+				<router-link to="/movies" exact>
+					<base-button type="cancel" title="Cancel" />
+				</router-link>
 			</div>
-	
+
 			<p v-if="submitStatus === 'OK'">Thanks for your submission!</p>
 			<p v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
 		</form>
@@ -153,7 +155,8 @@
 	import BaseButton from "../components/BaseButton";
 
 	export default {
-		name: "movie-form",
+		name: "movie-edit",
+
 		components: {
 			InputText,
 			InputNumber,
@@ -163,22 +166,14 @@
 		data() {
 			return {
 				submitStatus: null,
-				movie: {
-					title: "",
-					director: "",
-					description: "",
-					poster: "",
-					duration: "",
-					rating: "",
-					genre: "",
-					year: "",
-				},
+				movie: this.$route.params.data,
 			};
 		},
 
 		methods: {
 			handleSubmit() {
 				const movie = this.movie;
+				console.log(movie);
 				if (
 					this.invalidTitle ||
 					this.invalidDirector ||
@@ -197,27 +192,14 @@
 						this.submitStatus = "OK";
 					}, 500);
 				}
-				this.createMovie(movie);
+				this.updateMovie(movie);
 			},
 
-			async createMovie(movie) {
-				await MoviesApiClient.createMovie(movie).then((response) =>
+			async updateMovie(movie) {
+				await MoviesApiClient.updateMovie(movie).then((response) =>
 					console.log(response)
 				);
 				this.$router.push("../Movies");
-			},
-			clearForm(event) {
-				event.preventDefault();
-				this.movie = {
-					title: "",
-					director: "",
-					description: "",
-					poster: "",
-					duration: "",
-					rating: "",
-					genre: "",
-					year: "",
-				};
 			},
 		},
 		computed: {
@@ -277,9 +259,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	
 
-	
 	.loader {
 		margin: 0 auto;
 	}

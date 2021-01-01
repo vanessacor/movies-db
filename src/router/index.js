@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Movies from "../views/Movies.vue";
 import MovieDetails from "../views/MovieDetails.vue";
-import MovieForm from "../views/MovieForm.vue";
+import MovieCreate from "../views/MovieCreate.vue";
+import MovieEdit from "../views/MovieEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -16,15 +17,18 @@ const routes = [
   {
     path: "/movies",
     name: "Movies",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Movies,
   },
   {
     path: "/movies/create",
-    name: "movieForm",
-    component: MovieForm,
+    name: "movieCreate",
+    component: MovieCreate,
+  },
+  {
+    path: "/movies/edit",
+    name: "movieEdit",
+    component: MovieEdit,
+    props: route => ({ data: route.query.data })
   },
   {
     path: "/movies/:id",

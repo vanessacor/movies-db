@@ -1,5 +1,5 @@
 <template >
-	<button class="button" v-on:click="$emit('click', $event)">
+	<button class="button" :class="type" v-on:click="$emit('click', $event)">
         {{ title}}
     </button>
 		
@@ -13,7 +13,7 @@
                 type:String,
                 required:true
             },
-            class: {
+            type: {
                 type: String,
                 required: true
             }
