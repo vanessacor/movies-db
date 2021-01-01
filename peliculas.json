@@ -1,0 +1,81 @@
+{
+  "movies": [
+    {
+      "title": "Before Sunset",
+      "director": "Richard Linklater",
+      "description": "Is a 2004 American romantic drama film, the sequel to Before Sunrise (1995).",
+      "poster": "https://images-na.ssl-images-amazon.com/images/I/41IBmq-jrrL._AC_.jpg",
+      "duration": 80,
+      "rating": 5,
+      "genre": "Drama",
+      "year": "2004",
+      "id": 7
+    },
+    {
+      "title": "Before Midnight",
+      "director": "Richard Linklater",
+      "description": "Is a 2004 American romantic drama film, the sequel to Before Sunrise (1995).",
+      "poster": "https://images-na.ssl-images-amazon.com/images/I/51MRhkDZtLL._AC_.jpg",
+      "duration": 109,
+      "rating": 5,
+      "genre": "PG-13",
+      "year": "2013",
+      "id": 8
+    },
+    {
+      "title": "Princess Mononoke ",
+      "director": "Hayao Miyazaki",
+      "description": "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami.",
+      "poster": "https://m.media-amazon.com/images/I/81Yh2gl48JL._AC_SY741_.jpg",
+      "duration": "133",
+      "rating": "5",
+      "genre": "13",
+      "year": "1997",
+      "id": 9
+    },
+    {
+      "title": "Ponette",
+      "director": "Jacques Doillon",
+      "description": " The film centers on four-year-old Ponette (Victoire Thivisol), who is coming to terms with the death of her mother in a car crash. ",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjhiYWMwNmQtNTFlNS00ZGVmLTlhYmEtNzYyNWUwMjliZDNiXkEyXkFqcGdeQXVyNjMwMjk0MTQ@._V1_UY1200_CR96,0,630,1200_AL_.jpg",
+      "duration": "97",
+      "rating": "5",
+      "genre": "13",
+      "year": "1996",
+      "id": 11
+    },
+    {
+      "title": "Fantastic Mr. Fox",
+      "director": "Wes Anderson",
+      "description": "Fantastic Mr. Fox is a 2009 American stop motion animated comedy film directed by Wes Anderson, based on Roald Dahl's 1970 children's novel of the same name. ",
+      "poster": "https://m.media-amazon.com/images/I/71Kyza2vAlL._AC_SY679_.jpg",
+      "duration": "87",
+      "rating": "5",
+      "genre": "13",
+      "year": "2009",
+      "id": 23
+    },
+    {
+      "title": "Adaptation",
+      "director": "Spike Jonze",
+      "description": "Kaufman, a screen writer, struggles to adapt Orlean's book about Laroche, who clones rare orchids and sells them to collectors. Their lives get intertwined with unpredictable results.",
+      "poster": "https://images-na.ssl-images-amazon.com/images/I/51meYy-Qx3L._AC_.jpg",
+      "duration": "115",
+      "rating": "5",
+      "genre": "Drama",
+      "year": "2002",
+      "id": 26
+    },
+    {
+      "title": "The Party",
+      "director": "Blake Edwards",
+      "description": "Bakshi, a bumbling actor, is fired after he ruins a film set during a shoot. But somehow he ends up getting invited to a grand party. Once there, his foolishness causes a lot of chaos and destruction.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDRhMzhjZmUtNTEzMy00MjRjLThhMjYtZmQ2MjAyOGI1N2Q4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+      "duration": "99",
+      "rating": "4",
+      "genre": "Comedy",
+      "year": "1977",
+      "id": 27
+    }
+  ]
+}
