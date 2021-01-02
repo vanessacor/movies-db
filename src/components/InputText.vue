@@ -18,7 +18,7 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	.input-wrapper {
 		display: flex;
 		flex-direction: column;
@@ -31,8 +31,8 @@
 		outline: none;
 		border: none;
 		background-color: transparent;
-		border-bottom: 2px solid #dce2e7;
-		color: #dce2e7;
+		border-bottom: 2px solid $base-color-light;
+		color: $base-color-light;
 	}
 	.input-label {
 		margin-bottom: 5px;

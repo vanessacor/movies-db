@@ -51,7 +51,7 @@
 	};
 </script>
 
-<style>
+<style scope lang="scss">
 	.movie-list {
 		display: flex;
 		flex-direction: row;

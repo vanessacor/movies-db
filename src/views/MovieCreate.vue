@@ -249,7 +249,7 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	.movie-form {
 		display: flex;
 		flex-direction: column;
@@ -265,10 +265,10 @@
 	.movie-form-feedback {
 		margin: 0;
 		padding-top: 10px;
-		color: #c10e0e;
+		color: $highlight-color;
 	}
 	.movie-form.submitted .field.invalid {
-		border-color: #c10e0e;
+		border-color: $highlight-color;
 		padding-left: 20px;
 	}
 
@@ -277,8 +277,6 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	
-
 	
 	.loader {
 		margin: 0 auto;

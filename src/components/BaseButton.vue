@@ -21,7 +21,7 @@
 	};
 </script>
 
-<style scope>
+<style scope lang="scss">
     .button {
         padding: 10px;
 		font-size: calc(18px + 0.5vw);
@@ -30,13 +30,13 @@
     }
     
     .submit {
-		background-color: #dce2e7;
-		color: #191919;
+		background-color: $base-color-light;
+		color: $base-color-dark;
 	}
 
 	.clear, .delete {
-		background-color: #c10e0e;
-		color: #dce2e7;
+		background-color: $highlight-color;
+		color: $base-color-light;
 	}
 
 </style>

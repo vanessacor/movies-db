@@ -231,36 +231,4 @@
 	};
 </script>
 
-<style>
-	.movie-form {
-		display: flex;
-		flex-direction: column;
-		margin-bottom: 2rem;
-	}
-	.movie-form {
-		text-align: left;
-	}
-	.movie-form-field {
-		margin: 10px 0 30px 0;
-	}
 
-	.movie-form-feedback {
-		margin: 0;
-		padding-top: 10px;
-		color: #c10e0e;
-	}
-	.movie-form.submitted .field.invalid {
-		border-color: #c10e0e;
-		padding-left: 20px;
-	}
-
-	.movie-form-actions {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	.loader {
-		margin: 0 auto;
-	}
-</style>

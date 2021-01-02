@@ -16,19 +16,19 @@
 	};
 </script>
 
-<style scope>
+<style scope lang="scss">
 	.movie-card {
 		max-width: 200px;
 		margin-bottom: 20px;
 		margin-right: 20px;
 	}
 	a {
-		color: #f0f0f0;
+		color: $base-color-light;
 		text-decoration: none;
 	}
 
 	a:hover {
-		color: #c22026;
+		color: $highlight-color;
 	}
 
 	a:hover img {
