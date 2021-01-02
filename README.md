@@ -17,10 +17,12 @@ With this exercise I have learnt:
 
 - How to create Vue Components
 - How to make components dynamic using props
+- How debbug using Vue devtools
 - How to work with conditional statements and events in Vue
 - How to set up routes with Vue Router
-- How to make API calls for every CRUD actions
+- How to make API calls for CRUD actions
 - How to work with forms and form validation
+- How to use style with scss
 
 
 ## Project setup
