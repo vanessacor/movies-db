@@ -22,6 +22,7 @@
 		margin-bottom: 20px;
 		margin-right: 20px;
 	}
+	
 	a {
 		color: $base-color-light;
 		text-decoration: none;

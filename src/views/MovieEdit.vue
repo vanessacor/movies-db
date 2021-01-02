@@ -6,6 +6,7 @@
 			v-if="isloading"
 		/>
 		<form v-else @submit.prevent="handleSubmit" novalidate class="movie-form">
+			<legend class="movie-form-legend">Edit Movie</legend>
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
 					v-model="movie.title"

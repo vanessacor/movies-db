@@ -12,37 +12,15 @@
       "id": 7
     },
     {
-      "title": "Before Midnight",
-      "director": "Richard Linklater",
-      "description": "Is a 2004 American romantic drama film, the sequel to Before Sunrise (1995).",
-      "poster": "https://images-na.ssl-images-amazon.com/images/I/51MRhkDZtLL._AC_.jpg",
-      "duration": 109,
-      "rating": 5,
-      "genre": "PG-13",
-      "year": "2013",
-      "id": 8
-    },
-    {
       "title": "Princess Mononoke ",
       "director": "Hayao Miyazaki",
       "description": "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami.",
       "poster": "https://m.media-amazon.com/images/I/81Yh2gl48JL._AC_SY741_.jpg",
       "duration": "133",
-      "rating": "5",
+      "rating": "4",
       "genre": "Anime",
       "year": "1997",
       "id": 9
-    },
-    {
-      "title": "Ponette",
-      "director": "Jacques Doillon",
-      "description": " The film centers on four-year-old Ponette (Victoire Thivisol), who is coming to terms with the death of her mother in a car crash. ",
-      "poster": "https://m.media-amazon.com/images/M/MV5BZjhiYWMwNmQtNTFlNS00ZGVmLTlhYmEtNzYyNWUwMjliZDNiXkEyXkFqcGdeQXVyNjMwMjk0MTQ@._V1_UY1200_CR96,0,630,1200_AL_.jpg",
-      "duration": "97",
-      "rating": "5",
-      "genre": "13",
-      "year": "1996",
-      "id": 11
     },
     {
       "title": "Fantastic Mr. Fox",
@@ -76,6 +54,50 @@
       "genre": "Comedy",
       "year": "1977",
       "id": 27
+    },
+    {
+      "title": "E .T",
+      "director": "Steven Spielberg",
+      "description": "An alien is left behind on Earth and is saved by young Elliot who decides to keep him hidden. While the task force hunts for it, Elliot and his siblings form an emotional bond with their new friend.",
+      "poster": "https://images-na.ssl-images-amazon.com/images/I/61gLgCCsI%2BL._AC_SY500_.jpg",
+      "duration": "109",
+      "rating": "4",
+      "genre": "Sci-fy",
+      "year": "1986",
+      "id": 28
+    },
+    {
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "director": "Michel Gondry",
+      "description": "Joel and Clementine begin a relationship post a train journey together, unaware that they had previously been in a relationship, the memories of which were clinically erased.",
+      "poster": "https://images-na.ssl-images-amazon.com/images/I/71G7AybM3qL._SL1500_.jpg",
+      "duration": "108",
+      "rating": "5",
+      "genre": "Drama",
+      "year": "2004",
+      "id": 29
+    },
+    {
+      "title": "Cidade de Deus",
+      "director": "Fernando Meirelles",
+      "description": "Two boys are brought up in a sadistic neighbourhood of Rio de Janeiro. They adopt diverse professional paths, with one of them becoming a photographer and the other boy becoming a drug dealer.",
+      "poster": "https://upload.wikimedia.org/wikipedia/pt/thumb/1/10/CidadedeDeus.jpg/245px-CidadedeDeus.jpg",
+      "duration": "130",
+      "rating": "5",
+      "genre": "Drama",
+      "year": "2002",
+      "id": 30
+    },
+    {
+      "title": "Boyhood",
+      "director": " Richard Linklater",
+      "description": "After MJ's parents' divorce, he and his sister Samantha live with their mother, whereas the father has visiting rights. Incidents that occur across a period of twelve years mould MJ's life.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_.jpg",
+      "duration": "165",
+      "rating": "5",
+      "genre": "Drama",
+      "year": "2014",
+      "id": 31
     }
   ]
 }

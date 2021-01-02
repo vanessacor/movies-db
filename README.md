@@ -24,8 +24,18 @@ With this exercise I have learnt:
 - How to work with forms and form validation
 - How to use style with scss
 
+## Screen Shots, Demo
 
-## Project setup
+![]()
+
+![]()
+
+## Acknowledgements
+
+- I used PropagateLoader Component from [ Saeris Vue Spiners](https://github.com/Saeris/vue-spinners)
+
+## Getting Started
+
 1. Setup Vue Project
     ```
     npm install

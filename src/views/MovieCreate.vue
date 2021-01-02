@@ -1,6 +1,8 @@
 <template>
 	<div id="movie-create">
 		<form @submit.prevent="handleSubmit" novalidate class="movie-form">
+			<legend class="movie-form-legend">New Movie</legend>
+			
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
 					v-model="movie.title"
@@ -137,7 +139,7 @@
 				<base-button type="submit" title="Add Movie" />
 				<base-button type="clear" title="Clear" @click="clearForm" />
 			</div>
-	
+
 			<p v-if="submitStatus === 'OK'">Thanks for your submission!</p>
 			<p v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
 		</form>
@@ -179,6 +181,7 @@
 		methods: {
 			handleSubmit() {
 				const movie = this.movie;
+				this.submitStatus = "PENDING";
 				if (
 					this.invalidTitle ||
 					this.invalidDirector ||
@@ -192,11 +195,9 @@
 					this.submitStatus = "ERROR";
 					return;
 				} else {
-					this.submitStatus = "PENDING";
-					setTimeout(() => {
-						this.submitStatus = "OK";
-					}, 500);
+					this.submitStatus = "OK";
 				}
+
 				this.createMovie(movie);
 			},
 
@@ -253,10 +254,17 @@
 	.movie-form {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 2rem;
-	}
-	.movie-form {
+		max-width: 800px;
+		padding: 10px;
+		margin: 0 auto;
 		text-align: left;
+		border: 2px solid $highlight-color;
+	}
+	.movie-form-legend {
+		margin-bottom: 80px;
+		text-align: center;
+		font-size: 18px;
+		text-transform: uppercase;
 	}
 	.movie-form-field {
 		margin: 10px 0 30px 0;
@@ -277,7 +285,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	
+
 	.loader {
 		margin: 0 auto;
 	}

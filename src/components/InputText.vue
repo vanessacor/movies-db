@@ -22,10 +22,10 @@
 	.input-wrapper {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 20px;
 	}
 	.input {
 		padding: 10px;
-		width: 100%;
 		font-size: 16px;
 		box-shadow: none;
 		outline: none;

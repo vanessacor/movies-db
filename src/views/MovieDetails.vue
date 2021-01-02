@@ -69,13 +69,20 @@
 		display: grid;
 		grid-template-columns: 50% 50%;
 		grid-template-rows: auto auto auto;
-		gap: 10px;
+		gap: 15px;
 		padding: 10px 10px 5px;
 		margin-bottom: 30px;
 		border-radius: 5px;
 		box-shadow: 1px 1px 5px #1d1c1b;
 		text-align: left;
 		color: f0f0f0;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.movie-details {
+			max-width: 800px;
+			margin: 0 auto;
+		}
 	}
 
 	.movie-details-img {
