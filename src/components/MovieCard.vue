@@ -1,6 +1,6 @@
 <template>
 	<article :key="movie.title" class="movie-card">
-		<router-link :to="`/movies/${movie.id}`" class="movie-card-link">
+		<router-link :to="{name: 'movieDetails', params: {id: movie.id}}" class="movie-card-link">
 			<img :src="movie.poster" alt="" class="movie-img" />
 			<p>{{ movie.title }}</p>
 		</router-link>

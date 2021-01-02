@@ -1,6 +1,11 @@
 <template>
-	<div id="movie-create">
-		<form @submit.prevent="handleSubmit" novalidate class="movie-form">
+	<div id="movie-edit">
+		<PropagateLoader
+			class="loader"
+			color="#c22026"
+			v-if="isloading"
+		/>
+		<form v-else @submit.prevent="handleSubmit" novalidate class="movie-form">
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
 					v-model="movie.title"
@@ -156,21 +161,30 @@
 
 	export default {
 		name: "movie-edit",
-
 		components: {
 			InputText,
 			InputNumber,
 			BaseButton,
 			PropagateLoader,
 		},
+
 		data() {
 			return {
+				movie: {},
+				isLoading: true,
+				id: this.$route.params.id,
 				submitStatus: null,
-				movie: this.$route.params.data,
 			};
 		},
 
 		methods: {
+			async getMovie() {
+				await MoviesApiClient.getMovie(this.id).then(
+					(response) => (this.movie = response.data)
+				);
+				console.log("getmovie", this.movie);
+				this.isloading = false;
+			},
 			handleSubmit() {
 				const movie = this.movie;
 				console.log(movie);
@@ -199,8 +213,11 @@
 				await MoviesApiClient.updateMovie(movie).then((response) =>
 					console.log(response)
 				);
-				this.$router.push("../Movies");
+				this.$router.push({name: 'Movies'});
 			},
+		},
+		mounted() {
+			this.getMovie();
 		},
 		computed: {
 			invalidTitle() {

@@ -14,7 +14,7 @@
 		</div>
 		<div class="movie-details-actions">
 			<base-button title="Delete" type="delete" @click="deleteMovie" />
-			<router-link :to="{ name: 'movieEdit', params: { data: movie }}" exact >
+			<router-link :to="{ name: 'movieEdit', params: { id: movie.id }}" >
 				<base-button type="edit" title="Edit" />
 			</router-link>
 		</div>

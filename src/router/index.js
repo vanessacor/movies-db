@@ -25,10 +25,9 @@ const routes = [
     component: MovieCreate,
   },
   {
-    path: "/movies/edit",
+    path: "/movies/edit/:id",
     name: "movieEdit",
     component: MovieEdit,
-    props: route => ({ data: route.query.data })
   },
   {
     path: "/movies/:id",
