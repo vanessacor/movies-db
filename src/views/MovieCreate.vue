@@ -2,7 +2,7 @@
 	<div id="movie-create">
 		<form @submit.prevent="handleSubmit" novalidate class="movie-form">
 			<legend class="movie-form-legend">New Movie</legend>
-			
+			<router-link to="/movies" exact> X </router-link>
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
 					v-model="movie.title"
@@ -252,6 +252,7 @@
 
 <style lang="scss">
 	.movie-form {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		max-width: 800px;
@@ -259,34 +260,37 @@
 		margin: 0 auto;
 		text-align: left;
 		border: 2px solid $highlight-color;
-	}
-	.movie-form-legend {
-		margin-bottom: 80px;
-		text-align: center;
-		font-size: 18px;
-		text-transform: uppercase;
-	}
-	.movie-form-field {
-		margin: 10px 0 30px 0;
-	}
 
-	.movie-form-feedback {
-		margin: 0;
-		padding-top: 10px;
-		color: $highlight-color;
-	}
-	.movie-form.submitted .field.invalid {
-		border-color: $highlight-color;
-		padding-left: 20px;
-	}
-
-	.movie-form-actions {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	.loader {
-		margin: 0 auto;
+		&-legend {
+			margin-bottom: 80px;
+			text-align: center;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+		a {
+			position: absolute;
+			right: 10px;
+			font-size: 30px;
+		}
+		&-field {
+			margin: 10px 0 30px 0;
+		}
+		&-feedback {
+			margin: 0;
+			padding-top: 10px;
+			color: $highlight-color;
+		}
+		&-actions {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.submitted .field.invalid {
+			border-color: $highlight-color;
+			padding-left: 20px;
+		}
+		.loader {
+			margin: 0 auto;
+		}
 	}
 </style>

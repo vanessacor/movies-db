@@ -7,6 +7,7 @@
 		/>
 		<form v-else @submit.prevent="handleSubmit" novalidate class="movie-form">
 			<legend class="movie-form-legend">Edit Movie</legend>
+			<router-link to="/movies" exact> X </router-link>
 			<div class="movie-form-field" :class="{ invalid: invalidTitle }">
 				<inputText
 					v-model="movie.title"

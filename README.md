@@ -26,12 +26,12 @@ With this exercise I have learnt:
 
 ## Screen Shots, Demo
 
-![]()
+![Demo](demo.gif)
 
-![]()
 
 ## Acknowledgements
 
+- Big thanks to [Lorena](https://github.com/crimanlor) for showing me how to do a demo gif :smile:
 - I used PropagateLoader Component from [ Saeris Vue Spiners](https://github.com/Saeris/vue-spinners)
 
 ## Getting Started
