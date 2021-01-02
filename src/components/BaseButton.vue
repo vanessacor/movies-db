@@ -34,7 +34,7 @@
 		color: $base-color-dark;
 	}
 
-	.clear, .delete {
+	.clear, .delete, .cancel {
 		background-color: $highlight-color;
 		color: $base-color-light;
 	}

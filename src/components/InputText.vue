@@ -36,6 +36,7 @@
 	}
 	.input-label {
 		margin-bottom: 5px;
-		
+		text-transform: uppercase;
+		font-weight: bold;
 	}
 </style>
