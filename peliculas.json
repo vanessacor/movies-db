@@ -6,7 +6,7 @@
       "description": "Is a 2004 American romantic drama film, the sequel to Before Sunrise (1995).",
       "poster": "https://images-na.ssl-images-amazon.com/images/I/41IBmq-jrrL._AC_.jpg",
       "duration": 80,
-      "rating": 5,
+      "rating": "1",
       "genre": "Drama",
       "year": "2004",
       "id": 7
@@ -39,7 +39,7 @@
       "description": "Kaufman, a screen writer, struggles to adapt Orlean's book about Laroche, who clones rare orchids and sells them to collectors. Their lives get intertwined with unpredictable results.",
       "poster": "https://images-na.ssl-images-amazon.com/images/I/51meYy-Qx3L._AC_.jpg",
       "duration": "115",
-      "rating": "5",
+      "rating": "4",
       "genre": "Drama",
       "year": "2002",
       "id": 26
