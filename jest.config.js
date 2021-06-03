@@ -6,4 +6,5 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ["src/**/*.{js,vue}", "!**/node_modules/**"],
+  snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
 };

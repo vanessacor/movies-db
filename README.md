@@ -6,13 +6,13 @@ This is a learning Vue Project.
 
 I was asked to create a Movie application, to list, create, update and delete movies (CRUD) I decided to use this opportunity to learn how to build an App using Vue.js
 
-
 ## Project Requirements
- - Develop a dynamic interface in Javascript using good development and layout practices.
- - Use the Faker Api server to CRUD the movies
 
+- Develop a dynamic interface in Javascript using good development and layout practices.
+- Use the Faker Api server to CRUD the movies
 
 ## Reflection
+
 With this exercise I have learnt:
 
 - How to create Vue Components
@@ -28,7 +28,6 @@ With this exercise I have learnt:
 
 ![Demo](demo.gif)
 
-
 ## Acknowledgements
 
 - Big thanks to [Lorena](https://github.com/crimanlor) for showing me how to do a demo gif :smile:
@@ -37,34 +36,45 @@ With this exercise I have learnt:
 ## Getting Started
 
 1. Setup Vue Project
-    ```
-    npm install
-    ```
 
-    Compiles and hot-reloads for development
-    ```
-    npm run serve
-    ```
+   ```
+   npm install
+   ```
 
-    Compiles and minifies for production
-    ```
-    npm run build
-    ```
+   Compiles and hot-reloads for development
 
-    Lints and fixes files
-    ```
-    npm run lint
-    ```
+   ```
+   npm run serve
+   ```
 
+   Run the tests
 
-2. Setup Faker Api
+   ```
+   npm run test:unit
+   ```
 
-    Install Json Server
-    ```
-    sudo npm install -g json-server
-    ```
+   Compiles and minifies for production
 
-    Run json server
-    ```
-    json-server --watch peliculas.json
-    ```
+   ```
+   npm run build
+   ```
+
+   Lints and fixes files
+
+   ```
+   npm run lint
+   ```
+
+2) Setup Faker Api
+
+   Install Json Server
+
+   ```
+   sudo npm install -g json-server
+   ```
+
+   Run json server
+
+   ```
+   json-server --watch peliculas.json
+   ```

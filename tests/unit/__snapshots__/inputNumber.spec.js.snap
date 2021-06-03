@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test InputText.vue match the snapshot 1`] = `<div><label for="title">Rate the movie</label> <input class="input"></div>`;

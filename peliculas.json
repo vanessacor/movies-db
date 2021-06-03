@@ -98,6 +98,17 @@
       "genre": "Drama",
       "year": "2014",
       "id": 31
+    },
+    {
+      "title": "foooooo",
+      "director": "Wes Anderson",
+      "description": "lorem ipsum askjaslkj skjalksjask ",
+      "poster": "https://media-vanessapoppe-me.s3-eu-west-1.amazonaws.com/images/screenshots/calculator.png",
+      "duration": "123",
+      "rating": "2",
+      "genre": "drama",
+      "year": "2000",
+      "id": 32
     }
   ]
 }
