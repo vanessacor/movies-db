@@ -1,10 +1,10 @@
 <template>
   <div id="movie-edit">
-    <PropagateLoader class="loader" color="#c22026" v-if="isloading" />
-    <form v-else @submit.prevent="handleSubmit" novalidate class="movie-form">
+    <!-- <PropagateLoader class="loader" color="#c22026" v-if="isloading" /> -->
+    <form @submit.prevent="handleSubmit" novalidate class="movie-form">
       <legend class="movie-form-legend">Edit Movie</legend>
       <router-link to="/movies" exact> X </router-link>
-      <div class="movie-form-field" :class="{ invalid: invalidTitle }">
+      <div class="movie-form-field" :class="{ invalid: invalidInput('title') }">
         <inputText
           v-model="movie.title"
           type="text"
@@ -14,12 +14,15 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidTitle && submitStatus === 'ERROR'"
+          v-if="invalidInput('title') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
       </div>
-      <div class="movie-form-field" :class="{ invalid: invalidDirector }">
+      <div
+        class="movie-form-field"
+        :class="{ invalid: invalidInput('director') }"
+      >
         <inputText
           v-model="movie.director"
           type="text"
@@ -29,13 +32,16 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidDirector && submitStatus === 'ERROR'"
+          v-if="invalidInput('director') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
       </div>
 
-      <div class="movie-form-field" :class="{ invalid: invalidDescription }">
+      <div
+        class="movie-form-field"
+        :class="{ invalid: invalidInput('description') }"
+      >
         <inputText
           v-model="movie.description"
           type="text"
@@ -45,7 +51,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidDescription && submitStatus === 'ERROR'"
+          v-if="invalidInput('description') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -60,7 +66,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidPoster && submitStatus === 'ERROR'"
+          v-if="invalidInput('poster') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -77,7 +83,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidDuration && submitStatus === 'ERROR'"
+          v-if="invalidInput('duration') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -94,7 +100,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidRating && submitStatus === 'ERROR'"
+          v-if="invalidInput('rating') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -111,7 +117,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidGenre && submitStatus === 'ERROR'"
+          v-if="invalidInput('genre') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -126,7 +132,7 @@
 
         <p
           class="movie-form-feedback"
-          v-if="invalidYear && submitStatus === 'ERROR'"
+          v-if="invalidInput('year') && submitStatus === 'ERROR'"
         >
           Field is required
         </p>
@@ -169,9 +175,9 @@
     data() {
       return {
         movie: {},
-        isLoading: true,
         id: this.$route.params.id,
         submitStatus: null,
+        validationError: false,
       };
     },
 
@@ -179,20 +185,18 @@
       async getMovie() {
         const response = await MoviesApiClient.getMovie(this.id);
         this.movie = response.data;
-
-        this.isloading = false;
       },
       handleSubmit() {
         const movie = this.movie;
         if (
-          this.invalidTitle ||
-          this.invalidDirector ||
-          this.invalidDescription ||
-          this.invalidPoster ||
-          this.invalidDuration ||
-          this.invalidRating ||
-          this.invalidGenre ||
-          this.invalidYear
+          this.invalidInput("title") ||
+          this.invalidInput("director") ||
+          this.invalidInput("Description") ||
+          this.invalidInput("Poster") ||
+          this.invalidInput("Duration") ||
+          this.invalidInput("Rating") ||
+          this.invalidInput("Genre") ||
+          this.invalidInput("Year")
         ) {
           this.submitStatus = "ERROR";
           return;
@@ -205,6 +209,13 @@
         this.updateMovie(movie);
       },
 
+      invalidInput(input) {
+        if (this.movie[input] === "") {
+          this.validationError = true;
+          return true;
+        }
+      },
+
       async updateMovie(movie) {
         const response = await MoviesApiClient.updateMovie(movie);
         console.log(response);
@@ -214,32 +225,6 @@
     },
     mounted() {
       this.getMovie();
-    },
-    computed: {
-      invalidTitle() {
-        return this.movie.title === "";
-      },
-      invalidDirector() {
-        return this.movie.title === "";
-      },
-      invalidDescription() {
-        return this.movie.description === "";
-      },
-      invalidPoster() {
-        return this.movie.poster === "";
-      },
-      invalidDuration() {
-        return this.movie.duration === "";
-      },
-      invalidRating() {
-        return this.movie.rating === "";
-      },
-      invalidGenre() {
-        return this.movie.genre === "";
-      },
-      invalidYear() {
-        return this.movie.year === "";
-      },
     },
   };
 </script>
