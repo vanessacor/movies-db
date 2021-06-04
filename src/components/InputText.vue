@@ -12,7 +12,6 @@
 
 <script>
   export default {
-    name: "inputText",
     inheritAttrs: false,
     props: ["label", "value"],
   };

@@ -164,7 +164,6 @@
   import BaseButton from "../components/BaseButton";
 
   export default {
-    name: "movie-edit",
     components: {
       InputText,
       InputNumber,

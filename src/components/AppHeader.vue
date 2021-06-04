@@ -8,12 +8,6 @@
   </header>
 </template>
 
-<script>
-  export default {
-    name: "appHeader",
-  };
-</script>
-
 <style scoped lang="scss">
   #appHeader {
     padding: 10px;

@@ -1,33 +1,36 @@
 <template>
-  <article class="movie-details">
-    <img :src="movie.poster" alt="" class="movie-details-img" />
-    <div>
-      <h2>{{ movie.title }}</h2>
-      <p class="movie-details-director">Directed by {{ movie.director }}</p>
-      <p class="movie-details-description">{{ movie.description }}</p>
-      <p><i class="icon ion-md-star"></i> {{ movie.rating }}</p>
-      <div class="movie-details-small">
-        <p>{{ movie.duration }} minutes</p>
-        <p>{{ movie.genre }}</p>
-        <p>{{ movie.year }}</p>
+  <div>
+    <PropagateLoader class="loader" color="#c22026" v-if="isloading" />
+    <article v-else class="movie-details">
+      <img :src="movie.poster" alt="" class="movie-details-img" />
+      <div>
+        <h2>{{ movie.title }}</h2>
+        <p class="movie-details-director">Directed by {{ movie.director }}</p>
+        <p class="movie-details-description">{{ movie.description }}</p>
+        <p><i class="icon ion-md-star"></i> {{ movie.rating }}</p>
+        <div class="movie-details-small">
+          <p>{{ movie.duration }} minutes</p>
+          <p>{{ movie.genre }}</p>
+          <p>{{ movie.year }}</p>
+        </div>
       </div>
-    </div>
-    <div class="movie-details-actions">
-      <base-button title="Delete" type="delete" @click="deleteMovie" />
-      <router-link :to="{ name: 'movieEdit', params: { id: movie.id } }">
-        <base-button type="edit" title="Edit" />
-      </router-link>
-    </div>
-  </article>
+      <div class="movie-details-actions">
+        <base-button title="Delete" type="delete" @click="deleteMovie" />
+        <router-link :to="{ name: 'movieEdit', params: { id: movie.id } }">
+          <base-button type="edit" title="Edit" />
+        </router-link>
+      </div>
+    </article>
+  </div>
 </template>
 
 <script>
   import MoviesApiClient from "../services/MoviesApiClient";
   import BaseButton from "../components/BaseButton.vue";
+  import { PropagateLoader } from "@saeris/vue-spinners";
 
   export default {
-    name: "movieDetails",
-    components: { BaseButton },
+    components: { BaseButton, PropagateLoader },
 
     data() {
       return {

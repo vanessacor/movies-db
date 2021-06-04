@@ -155,7 +155,6 @@
   import BaseButton from "../components/BaseButton";
 
   export default {
-    name: "movie-create",
     components: {
       InputText,
       InputNumber,
@@ -201,6 +200,7 @@
 
         this.createMovie(movie);
       },
+      
       invalidInput(input) {
         if (this.movie[input] === "") {
           this.validationError = true;
@@ -226,32 +226,7 @@
         };
       },
     },
-    computed: {
-      // invalidTitle() {
-      //   return this.movie.title === "";
-      // },
-      // invalidDirector() {
-      //   return this.movie.title === "";
-      // },
-      // invalidDescription() {
-      //   return this.movie.description === "";
-      // },
-      // invalidPoster() {
-      //   return this.movie.poster === "";
-      // },
-      // invalidDuration() {
-      //   return this.movie.duration === "";
-      // },
-      // invalidRating() {
-      //   return this.movie.rating === "";
-      // },
-      // invalidGenre() {
-      //   return this.movie.genre === "";
-      // },
-      // invalidYear() {
-      //   return this.movie.year === "";
-      // },
-    },
+
   };
 </script>
 

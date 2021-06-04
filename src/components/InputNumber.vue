@@ -12,7 +12,6 @@
 
 <script>
   export default {
-    name: "inputNumber",
     inheritAttrs: false,
     props: ["label", "value", "min", "max"],
   };

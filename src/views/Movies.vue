@@ -18,7 +18,6 @@
   import MovieCard from "../components/MovieCard";
 
   export default {
-    name: "movies",
     components: { MovieCard, PropagateLoader },
 
     data() {
