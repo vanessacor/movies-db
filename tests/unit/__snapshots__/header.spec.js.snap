@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Header.vue component matches the snapshot 1`] = `
+<header id="appHeader">
+  <h1>Movies DB</h1>
+  <nav>
+    <router-link-stub to="/">Home</router-link-stub> |
+    <router-link-stub to="/movies">Movies</router-link-stub>
+  </nav>
+</header>
+`;

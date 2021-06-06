@@ -22,7 +22,7 @@ describe("test InputText.vue", () => {
     wrapper.vm.$emit("input");
     expect(wrapper.emitted().input).toBeTruthy();
   });
-  
+
   it("match the snapshot", () => {
     expect(wrapper).toMatchSnapshot();
   });
