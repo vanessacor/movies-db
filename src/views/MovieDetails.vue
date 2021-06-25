@@ -52,9 +52,7 @@
         event.preventDefault();
         this.isloading = true;
         if (confirm("are you sure you want to delete this movie?")) {
-          const response = await MoviesApiClient.deleteMovie(this.id);
-          console.log("movie deleted", response);
-
+          await MoviesApiClient.deleteMovie(this.id);
           this.isloading = false;
           this.$router.push("../Movies");
         }

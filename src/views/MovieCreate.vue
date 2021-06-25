@@ -2,7 +2,7 @@
   <div id="movie-create">
     <form @submit.prevent="handleSubmit" novalidate class="movie-form">
       <legend class="movie-form-legend">New Movie</legend>
-      <router-link to="/movies" exact> X </router-link>
+      <router-link :to="{ name: 'Movies' }" exact> X </router-link>
       <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.title"
@@ -18,7 +18,7 @@
           Field is required
         </p>
       </div>
-      <div class="movie-form-field" :class="{ invalid: invalidDirector }">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.director"
           type="text"
@@ -34,7 +34,7 @@
         </p>
       </div>
 
-      <div class="movie-form-field" :class="{ invalid: invalidDescription }">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.description"
           type="text"
@@ -49,7 +49,7 @@
           Field is required
         </p>
       </div>
-      <div class="movie-form-field">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.poster"
           type="text"
@@ -65,7 +65,7 @@
         </p>
       </div>
 
-      <div class="movie-form-field">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputNumber
           v-model="movie.duration"
           type="number"
@@ -81,7 +81,7 @@
           Field is required
         </p>
       </div>
-      <div class="movie-form-field">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputNumber
           v-model="movie.rating"
           type="number"
@@ -98,7 +98,7 @@
           Field is required
         </p>
       </div>
-      <div class="movie-form-field">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.genre"
           type="text"
@@ -115,7 +115,7 @@
           Field is required
         </p>
       </div>
-      <div class="movie-form-field">
+      <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputNumber
           v-model="movie.year"
           type="number"
@@ -200,7 +200,7 @@
 
         this.createMovie(movie);
       },
-      
+
       invalidInput(input) {
         if (this.movie[input] === "") {
           this.validationError = true;
@@ -208,8 +208,7 @@
         }
       },
       async createMovie(movie) {
-        const response = await MoviesApiClient.createMovie(movie);
-        console.log(response);
+        await MoviesApiClient.createMovie(movie);
         this.$router.push("../Movies");
       },
       clearForm(event) {
@@ -226,7 +225,6 @@
         };
       },
     },
-
   };
 </script>
 

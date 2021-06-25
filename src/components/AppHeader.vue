@@ -2,8 +2,8 @@
   <header id="appHeader">
     <h1>Movies DB</h1>
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/movies">Movies</router-link>
+      <router-link :to="{name: 'Home'}">Home</router-link> |
+      <router-link :to="{name: 'Movies'}">Movies</router-link>
     </nav>
   </header>
 </template>
