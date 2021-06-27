@@ -1,0 +1,28 @@
+{
+  "form": {
+    "create": {
+      "title": "New Movie"
+    },
+    "edit": {
+      "title": "Edit Movie"
+    },
+    "add": "Add",
+    "clear": "Clear",
+    "insert": "Insert {field}",
+    "movieDirector": "Movie Director",
+    "movieTitle": "Movie Title",
+    "movieDescription": "Movie Description",
+    "movieDuration": "Movie Duraction",
+    "movieGenre": "Genre",
+    "movieYear": "Year",
+    "posterImage": "Poster Image",
+    "movieRating": "Rating"
+  },
+  "message": "Welcome to Movies DB",
+  "movies": "movies",
+  "addMovie": "Add a movie",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit"
+}

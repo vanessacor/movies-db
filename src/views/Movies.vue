@@ -1,7 +1,7 @@
 <template>
   <div id="movies">
     <router-link to="/movies/create" exact>
-      <p>add a Movie</p>
+      <p>{{ $t("addMovie") }}</p>
     </router-link>
 
     <PropagateLoader class="loader" color="#c22026" v-if="isloading" />

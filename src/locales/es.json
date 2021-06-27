@@ -1,0 +1,28 @@
+{
+  "form": {
+    "create": {
+      "title": "Añadir Pelicula"
+    },
+    "edit": {
+      "title": "Editar Pelicula"
+    },
+    "add": "Añadir",
+    "clear": "Limpiar",
+    "insert": "Inserir {field}",
+    "movieDirector": "Dirección",
+    "movieTitle": "Titulo",
+    "movieDescription": "Sinopsis",
+    "movieDuration": "Duración",
+    "movieGenre": "Género",
+    "movieYear": "Año",
+    "posterImage": "Imagen del Cartel",
+    "movieRating": "Calificación"
+  },
+  "message": "Bienvenid@ a Peliculas DB",
+  "movies": "Peliculas",
+  "addMovie": "Añadir una Pelicula",
+  "save": "Guardar",
+  "cancel": "Cancelar",
+  "delete": "Borrar",
+  "edit": "Editar"
+}

@@ -1,14 +1,14 @@
 <template>
   <div id="movie-create">
     <form @submit.prevent="handleSubmit" novalidate class="movie-form">
-      <legend class="movie-form-legend">New Movie</legend>
+      <legend class="movie-form-legend">{{ $t("form.create.title") }}</legend>
       <router-link :to="{ name: 'Movies' }" exact> X </router-link>
       <div class="movie-form-field" :class="{ invalid: validationError }">
         <inputText
           v-model="movie.title"
           type="text"
-          label="Movie Title"
-          placeholder="Insert Title"
+          :label="$t('form.movieTitle')"
+          :placeholder="$t('form.insert', { field: $t('form.movieTitle') })"
         />
 
         <p
@@ -22,8 +22,8 @@
         <inputText
           v-model="movie.director"
           type="text"
-          label="Movie Director"
-          placeholder="Insert Director Name"
+          :label="$t('form.movieDirector')"
+          :placeholder="$t('form.insert', { field: $t('form.movieDirector') })"
         />
 
         <p
@@ -38,8 +38,10 @@
         <inputText
           v-model="movie.description"
           type="text"
-          label="Movie Description"
-          placeholder="Insert Description"
+          :label="$t('form.movieDescription')"
+          :placeholder="
+            $t('form.insert', { field: $t('form.movieDescription') })
+          "
         />
 
         <p
@@ -53,8 +55,8 @@
         <inputText
           v-model="movie.poster"
           type="text"
-          label="Poster Image"
-          placeholder="Insert Poster Image"
+          :label="$t('form.posterImage')"
+          :placeholder="$t('form.insert', { field: $t('form.posterImage') })"
         />
 
         <p
@@ -69,8 +71,8 @@
         <inputNumber
           v-model="movie.duration"
           type="number"
-          label="Movie Duration"
-          placeholder="Insert Duration"
+          :label="$t('form.movieDuration')"
+          :placeholder="$t('form.insert', { field: $t('form.movieDuration') })"
           min="0"
         />
 
@@ -85,8 +87,8 @@
         <inputNumber
           v-model="movie.rating"
           type="number"
-          label="Movie Rating"
-          placeholder="Insert Rating"
+          :label="$t('form.movieRating')"
+          :placeholder="$t('form.insert', { field: $t('form.movieRating') })"
           min="0"
           max="5"
         />
@@ -102,8 +104,8 @@
         <inputText
           v-model="movie.genre"
           type="text"
-          label="Genre"
-          placeholder="Insert Genre"
+          :label="$t('form.movieGenre')"
+          :placeholder="$t('form.insert', { field: $t('form.movieGenre') })"
           min="0"
           max="18"
         />
@@ -119,8 +121,8 @@
         <inputNumber
           v-model="movie.year"
           type="number"
-          label="Movie Year"
-          placeholder="Insert Year"
+          :label="$t('form.movieYear')"
+          :placeholder="$t('form.insert', { field: $t('form.movieYear') })"
         />
 
         <p
@@ -136,8 +138,8 @@
         v-if="submitStatus === 'PENDING'"
       />
       <div v-else class="movie-form-actions">
-        <base-button type="submit" title="Add Movie" />
-        <base-button type="clear" title="Clear" @click="clearForm" />
+        <base-button type="submit" :title="$t('form.add')" />
+        <base-button type="clear" :title="$t('form.clear')" @click="clearForm" />
       </div>
 
       <p v-if="submitStatus === 'OK'">Thanks for your submission!</p>

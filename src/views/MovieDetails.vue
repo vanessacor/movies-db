@@ -15,9 +15,9 @@
         </div>
       </div>
       <div class="movie-details-actions">
-        <base-button title="Delete" type="delete" @click="deleteMovie" />
+        <base-button :title="$t('delete')" type="delete" @click="deleteMovie" />
         <router-link :to="{ name: 'movieEdit', params: { id: movie.id } }">
-          <base-button type="edit" title="Edit" />
+          <base-button type="edit" :title="$t('edit')" />
         </router-link>
       </div>
     </article>
